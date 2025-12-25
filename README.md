@@ -70,6 +70,12 @@ Here are examples of the model's capabilities:
 
 **Reconstruction**: The model accurately reconstructs input digits while preserving their essential features. Some fine details are slightly blurred, which is characteristic of VAEs learning distributions rather than exact mappings.
 
+![](image.png)
+
 **Generation**: Sampling random vectors from N(0,1) and decoding them produces realistic-looking digits.
 
-**Interpolation**: The model can smoothly morph between different digits (e.g., 6 → 8) by linearly interpolating in the latent space, demonstrating that it has learned a continuous and structured representation.
+![](image-1.png)
+
+**Interpolation**: The model can smoothly morph between different digits (e.g., 5 → 8) by linearly interpolating in the latent space, demonstrating that it has learned a continuous and structured representation.
+
+![](image-2.png)
