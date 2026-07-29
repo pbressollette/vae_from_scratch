@@ -47,16 +47,16 @@ The trained model successfully:
 
 ### Examples Visualization
 
-Here are examples of the model's capabilities:
+Here are examples of the model's capabilities
 
 **Reconstruction**: The model accurately reconstructs input digits while preserving their essential features.
 
-![](reconstruction.png)
+![](images/reconstruction.png)
 
 **Generation**: Sampling random vectors from N(0,1) and decoding them produces realistic-looking digits.
 
-![](sampling.png)
+![](images/sampling.png)
 
 **Interpolation**: The model can smoothly morph between different digits by linearly interpolating in the latent space, demonstrating that it has learned a continuous and structured representation.
 
-![](interpolation.png)
+![](images/interpolation.png)
