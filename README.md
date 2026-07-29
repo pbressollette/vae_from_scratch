@@ -49,7 +49,7 @@ The trained model successfully:
 
 Here are examples of the model's capabilities
 
-**Reconstruction**: The model accurately reconstructs input digits while preserving their essential features.
+**Reconstruction**: The model accurately reconstructs input digits while preserving their essential features. On the first row the original images and on the second the reconstructed ones. 
 
 ![](images/reconstruction.png)
 
