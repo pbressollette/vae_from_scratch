@@ -2,15 +2,15 @@
 
 Implementation of a Variational Autoencoder (VAE) in PyTorch, trained on the MNIST dataset.
 
-## Motivation
+## Personal Motivation
 
-VAEs are powerful generative models that combine deep learning with probabilistic inference. I implemented this model from scratch to understand the mathematics behind variational inference and the reparameterization trick, and to explore the structure of learned latent representations.
+VAEs are generative models that combine deep learning with probabilistic inference. I implemented it from scratch to better understand the mathematics behind these models.
+
+VAE original paper : [Auto-Encoding Variational Bayes (Kingma & Welling, 2013)](https://arxiv.org/abs/1312.6114)
 
 ## Dataset
 
 I used the dataset [MNIST](http://yann.lecun.com/exdb/mnist/).
-
-"The MNIST database of handwritten digits has a training set of 60,000 examples, and a test set of 10,000 examples. The digits have been size-normalized and centered in a fixed-size image of 28x28 pixels."
 
 ## Installation & Usage
 
@@ -23,33 +23,14 @@ You are free to modify the hyperparameters directly in the notebook. The main pa
 - `NUM_EPOCHS`: number of training epochs (default: 10)
 
 Once you have the desired configuration, install the packages and run the notebook.
-```bash
-# packages installation
-pip install torch torchvision matplotlib numpy jupyter
-
-# run the notebook
-jupyter notebook vae_from_scratch.ipynb
-```
 
 ## Results
-
-### Training Curves
-
-After training for 10 epochs, the model converged successfully:
-
-| Epoch | Train Loss | Val Loss |
-|-------|------------|----------|
-| 1     | 7267.97    | 7022.17  |
-| 5     | 6773.17    | 6675.44  |
-| 10    | 6629.47    | 6563.28  |
-
-One can see that both training and validation losses decrease steadily. The validation loss remains lower than the training loss throughout training, indicating good generalization with no overfitting.
 
 ### Architecture
 
 The VAE consists of three main components:
 
-**Encoder**: Convolutional layers that compress 28x28 images into a 20-dimensional latent representation, outputting both mean (μ) and log-variance (log σ²).
+**Encoder**: Convolutional layers that compress 28x28 images into a latent representation, outputting both mean (μ) and log-variance (log σ²).
 
 **Reparameterization**: Samples z = μ + σ × ε where ε ~ N(0,1), enabling backpropagation through stochastic nodes.
 
@@ -68,14 +49,14 @@ The trained model successfully:
 
 Here are examples of the model's capabilities:
 
-**Reconstruction**: The model accurately reconstructs input digits while preserving their essential features. Some fine details are slightly blurred, which is characteristic of VAEs learning distributions rather than exact mappings.
+**Reconstruction**: The model accurately reconstructs input digits while preserving their essential features.
 
-![](image.png)
+![](reconstruction.png)
 
 **Generation**: Sampling random vectors from N(0,1) and decoding them produces realistic-looking digits.
 
-![](image-1.png)
+![](sampling.png)
 
-**Interpolation**: The model can smoothly morph between different digits (e.g., 5 → 8) by linearly interpolating in the latent space, demonstrating that it has learned a continuous and structured representation.
+**Interpolation**: The model can smoothly morph between different digits by linearly interpolating in the latent space, demonstrating that it has learned a continuous and structured representation.
 
-![](image-2.png)
+![](interpolation.png)
